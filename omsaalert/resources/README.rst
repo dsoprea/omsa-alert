@@ -15,7 +15,7 @@ Install
 
 Use PyPI::
 
-    $ pip install omsa_alert
+    $ pip install omsa-alert
 
 
 -------
