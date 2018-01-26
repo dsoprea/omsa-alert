@@ -1,0 +1,1 @@
+omsaalert/resources/README.rst

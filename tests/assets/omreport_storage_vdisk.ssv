@@ -1,0 +1,12 @@
+List of Virtual Disks in the System
+
+Controller PERC 6/i Integrated (Embedded)
+
+ID;Status;Name;State;Hot Spare Policy violated;Encrypted;Layout;Size;T10 Protection Information Status;Associated Fluid Cache State ;Device Name;Bus Protocol;Media;Read Policy;Write Policy;Cache Policy;Stripe Element Size;Disk Cache Policy
+1;Ok;boot;Ready;Not Assigned;Not Applicable;RAID-6;4,094.75 GB (4396704333824 bytes);No;Not Applicable;/dev/sda;SATA;HDD;Adaptive Read Ahead;Write Through;Not Applicable;64 KB;Enabled
+
+Controller PERC 6/E Adapter (Slot 3)
+
+ID;Status;Name;State;Hot Spare Policy violated;Encrypted;Layout;Size;T10 Protection Information Status;Associated Fluid Cache State ;Device Name;Bus Protocol;Media;Read Policy;Write Policy;Cache Policy;Stripe Element Size;Disk Cache Policy
+0;Ok;group0;Ready;Not Assigned;Not Applicable;RAID-60;7,450.00 GB (7999376588800 bytes);No;Not Applicable;/dev/sdb;SAS;HDD;Adaptive Read Ahead;Write Through;Not Applicable;64 KB;Enabled
+
