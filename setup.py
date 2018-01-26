@@ -14,7 +14,7 @@ with open(os.path.join(_RESOURCES_PATH, 'version.txt')) as f:
     _VERSION = f.read().strip()
 
 setuptools.setup(
-    name='omsa_alert',
+    name='omsa-alert',
     version=_VERSION,
     description="Scan OMSA's omreport tool's output for issues",
     long_description=_LONG_DESCRIPTION,
