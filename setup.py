@@ -18,6 +18,7 @@ setuptools.setup(
     version=_VERSION,
     description="Scan OMSA's omreport tool's output for issues",
     long_description=_LONG_DESCRIPTION,
+    long_description_content_type='text/x-rst',
     classifiers=[],
     keywords='omsa omreport',
     author='Dustin Oprea',
