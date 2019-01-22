@@ -1,8 +1,14 @@
 import logging
 
 import omsaalert.parser
+import omsaalert.utility
 
 _LOGGER = logging.getLogger(__name__)
+
+_HEALTHY_VALUES = {
+    'Status': ['Ok'],
+    'State': ['Online'],
+}
 
 
 class PdiskParser(omsaalert.parser.ParserBase):
@@ -18,7 +24,12 @@ class PdiskParser(omsaalert.parser.ParserBase):
 
         problems = []
         for disk in disks:
-            if disk['Status'].lower() != 'ok':
-                problems.append(disk)
+            error_message = \
+                omsaalert.utility.check_expected_values(
+                    disk,
+                    _HEALTHY_VALUES)
+
+            if error_message is not None:
+                problems.append((error_message, disk))
 
         return problems

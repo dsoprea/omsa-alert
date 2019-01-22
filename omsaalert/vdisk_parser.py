@@ -1,8 +1,14 @@
 import logging
 
 import omsaalert.parser
+import omsaalert.utility
 
 _LOGGER = logging.getLogger(__name__)
+
+_HEALTHY_VALUES = {
+    'Status': ['Ok'],
+    'State': ['Ready'],
+}
 
 
 class VdiskParser(omsaalert.parser.ParserBase):
@@ -17,7 +23,12 @@ class VdiskParser(omsaalert.parser.ParserBase):
         problems = []
         for virtualdisks in blocks:
             for virtualdisk in virtualdisks:
-                if virtualdisk['Status'].lower() != 'ok':
-                    problems.append(virtualdisk)
+                error_message = \
+                    omsaalert.utility.check_expected_values(
+                        virtualdisk,
+                        _HEALTHY_VALUES)
+
+                if error_message is not None:
+                    problems.append((error_message, virtualdisk))
 
         return problems
